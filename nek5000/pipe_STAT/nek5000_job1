@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=nek5000_job1
+#SBATCH --ntasks=42                   # matches SGE's `-pe amd.pe 42`
+#SBATCH --cpus-per-task=1            # 1 core per task
+#SBATCH --time=24:00:00              # default wall time from original SLURM example
+#SBATCH --partition=multicore        # replace if different on your system
+#SBATCH --output=logfile.out
+#SBATCH --error=logfile.err
+#SBATCH --chdir=.
+
+module purge
+module load compilers/gcc/11.2.0
+module load mpi/gcc/openmpi/4.1.8-gcc-11.4.1
+
+export LD_LIBRARY_PATH=/opt/gridware/depots/8e896c5a/el7/pkg/compilers/gcc/8.2.0/lib64:$LD_LIBRARY_PATH
+
+echo "turbPipe" > SESSION.NAME
+echo "/mnt/iusers01/fse-ugpgt01/mace01/t62601ej/scratch/KTH_Framework/Examples/pipe_STAT/" >> SESSION.NAME
+
+mpirun -np 42 ./nek5000
