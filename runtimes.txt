@@ -1,0 +1,100 @@
+Nek5000
+
+endtime = 0.3
+
+total elapsed time             :   8.02805E+02 sec
+total solver time w/o IO       :   7.98464E+02 sec
+time/timestep                  :   6.42368E-01 sec
+avg throughput per timestep    :   1.00699E+05 gridpts/CPUs
+total max memory usage         :   1.37458E+01 GB
+
+
+endtime = 3
+
+total elapsed time             :   4.04060E+03 sec
+total solver time w/o IO       :   4.03487E+03 sec
+time/timestep                  :   5.89893E-01 sec
+avg throughput per timestep    :   1.09657E+05 gridpts/CPUs
+total max memory usage         :   1.37750E+01 GB
+
+endtime = 30
+
+total elapsed time             :   2.37620E+04 sec
+total solver time w/o IO       :   2.37571E+04 sec
+time/timestep                  :   3.90485E-01 sec
+avg throughput per timestep    :   1.65655E+05 gridpts/CPUs
+total max memory usage         :   1.41648E+01 GB
+
+nekRS
+
+endtime = 0.3
+
+>>> runtime statistics (step= 53  totalElapsed= 41.4623s):
+name                    time          abs%  rel%  calls
+  solve                 1.05609e+01s  100.0      
+    min                 1.62905e-01s
+    max                 4.64347e-01s
+    flops/rank          6.81238e+11
+    checkpointing       1.15599e-01s   1.1        1
+    udfExecuteStep      7.08160e-05s   0.0        53
+    makef               4.01548e+00s  38.0        53
+    udfProperties       9.41120e-05s   0.0        54
+    velocitySolve       3.65029e+00s  34.6        55
+      rhs               1.71016e-01s   1.6   4.7  55
+      preconditioner    3.76005e-01s   3.6  10.3  831
+    pressureSolve       2.18152e+00s  20.7        55
+      rhs               2.86873e-01s   2.7  13.2  55
+      preconditioner    1.33979e+00s  12.7  61.4  261
+        pMG smoother    9.24921e-01s   8.8  69.0  522
+        pMG smoother    1.23791e-01s   1.2   9.2  522
+        coarse grid     1.31330e-01s   1.2   9.8  261
+      initial guess     1.25538e-01s   1.2   5.8  55
+
+
+
+endtime = 3
+
+>>> runtime statistics (step= 503  totalElapsed= 106.706s):
+name                    time          abs%  rel%  calls
+  solve                 7.62994e+01s  100.0      
+    min                 1.38197e-01s
+    max                 4.61493e-01s
+    flops/rank          7.21124e+11
+    checkpointing       1.31174e-01s   0.2        1
+    udfExecuteStep      6.95328e-04s   0.0        503
+    makef               3.84249e+01s  50.4        503
+    udfProperties       7.39328e-04s   0.0        504
+    velocitySolve       2.37637e+01s  31.1        505
+      rhs               1.59629e+00s   2.1   6.7  505
+      preconditioner    2.29109e+00s   3.0   9.6  5055
+    pressureSolve       9.89341e+00s  13.0        505
+      rhs               2.70540e+00s   3.5  27.3  505
+      preconditioner    4.34094e+00s   5.7  43.9  842
+        pMG smoother    2.98748e+00s   3.9  68.8  1684
+        pMG smoother    3.98613e-01s   0.5   9.2  1684
+        coarse grid     4.33606e-01s   0.6  10.0  842
+      initial guess     1.25737e+00s   1.6  12.7  505
+
+
+endtime = 30
+
+>>> runtime statistics (step= 5003  totalElapsed= 737.619s):
+name                    time          abs%  rel%  calls
+  solve                 7.07009e+02s  100.0      
+    min                 1.34464e-01s
+    max                 4.59852e-01s
+    flops/rank          7.32855e+11
+    checkpointing       2.03415e-01s   0.0        2
+    udfExecuteStep      6.34090e-03s   0.0        5003
+    makef               3.82741e+02s  54.1        5003
+    udfProperties       6.99341e-03s   0.0        5004
+    velocitySolve       2.06151e+02s  29.2        5005
+      rhs               1.58530e+01s   2.2   7.7  5005
+      preconditioner    1.91849e+01s   2.7   9.3  42303
+    pressureSolve       7.88866e+01s  11.2        5005
+      rhs               2.68908e+01s   3.8  34.1  5005
+      preconditioner    2.76513e+01s   3.9  35.1  5347
+        pMG smoother    1.89899e+01s   2.7  68.7  10694
+        pMG smoother    2.53881e+00s   0.4   9.2  10694
+        coarse grid     2.78048e+00s   0.4  10.1  5347
+      initial guess     1.26034e+01s   1.8  16.0  5005
